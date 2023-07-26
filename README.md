@@ -23,7 +23,7 @@
 
 # 📖 Leaderboard <a name="about-project"></a>
 
-**Leaderboard** is a personal a web app using webpack to bundle the project.
+**Leaderboard** is a web app using webpack to bundle the project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
