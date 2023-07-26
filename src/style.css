@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap');
+
+:root {
+  --mainBlue: #1b51bc;
+}
+
+.title_container {
+  width: 90%;
+  margin-left: 2%;
+}
+
+body {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.main_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.recent_scores {
+  display: flex;
+  flex-direction: column;
+  width: 42.5%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 5%;
+}
+
+.add_scores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 20%;
+}
+
+.scores_list {
+  border: #000 solid 1px;
+  width: 100%;
+}
+
+.score_card {
+  padding: 2% 0;
+}
+
+.score_card span {
+  margin-left: 1%;
+}
+
+.recent_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+form li {
+  width: 100%;
+}
+
+.add_scores ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+}
+
+#card_gray {
+  background-color: #d4d4d4;
+}
+
+.add_scores li {
+  list-style: none;
+  margin-bottom: 9%;
+  width: 100%;
+}
+
+.refresh_btn {
+  text-decoration: none;
+  border-radius: 5px;
+  color: #000;
+  border: 2px solid #000;
+  padding: 1% 2%;
+}
+
+.submit_btn {
+  border-radius: 5px;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 2% 4%;
+  font-size: 13px;
+}
+
+input {
+  border: 2px solid #000;
+  padding: 3% 2%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#scorelInput {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+
+.btn_list {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
