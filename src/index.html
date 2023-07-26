@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <section>
+        <div class="title_container">
+            <h1 class="title"></h1>
+        </div>
+        <div class="main_container">
+            <div class="recent_scores">
+                <div class="recent_title">
+                    <h2>Recent scores</h2>
+                    <a class="refresh_btn" href="">Refresh</a>
+                </div>
+                <div class="scores_list"></div>
+            </div>
+        
+            <form class="add_scores" action=" " method="post">
+                <h2>Add your score</h2>
+                <ul>
+                    <li>
+                        <input type="text" aria-label="user_name" name="user_name" maxlength="30" placeholder="Your name" id="nameField" required/>
+                    </li>
+                    <li>
+                        <input type="number" aria-label="user_score" name="user_score" placeholder="Your escore" id="scorelInput" required/>
+                    </li>
+                    <li class="btn_list">
+                        <button class="submit_btn" type="submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
