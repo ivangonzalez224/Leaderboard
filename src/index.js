@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import './style.css';
+import { titleContainer, title, scoresList } from './modules/elements.js';
 
-const titleContainer = document.querySelector('.title_container');
-const title = document.querySelector('.title');
-const scoresList = document.querySelector('.scores_list');
 const scoresData = [{ name: 'Name1', score: 100 }, { name: 'Name2', score: 20 }, { name: 'Name3', score: 50 }, { name: 'Name4', score: 78 }];
 // Lodash, now imported by this script
 title.innerHTML = _.join(['Leaderboard', ' '], ' ');
