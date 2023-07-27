@@ -1,23 +1,53 @@
 import _ from 'lodash';
 import './style.css';
-import { titleContainer, title, scoresList } from './modules/elements.js';
+import {
+  titleContainer, title, scoresList, submitBtn, refreshBtn, nameField, scoreInput,
+} from './modules/elements.js';
+import postGame from './modules/createGame.js';
+import getScores from './modules/getScores.js';
+import submitScore from './modules/submit.js';
+import addScore from './modules/addScore.js';
+import updateCards from './modules/updateCards.js';
 
-const scoresData = [{ name: 'Name1', score: 100 }, { name: 'Name2', score: 20 }, { name: 'Name3', score: 50 }, { name: 'Name4', score: 78 }];
-// Lodash, now imported by this script
+let idGame = 'I9M1akJB1fujplf54ULE';
+let scoresData = [];
+let getData;
 title.innerHTML = _.join(['Leaderboard', ' '], ' ');
 titleContainer.appendChild(title);
 
-scoresData.forEach((element) => {
-  const scoreCard = document.createElement('div');
-  const name = document.createElement('span');
-  const score = document.createElement('span');
-  scoresList.appendChild(scoreCard);
-  if (scoresData.indexOf(element) % 2 !== 0) {
-    scoreCard.id = 'card_gray';
+getData = getScores(idGame);
+getData.then((value) => {
+  scoresData = value;
+  if (scoresData.length !== 0) {
+    while (scoresList.lastElementChild) {
+      scoresList.removeChild(scoresList.lastElementChild);
+    }
+    updateCards(scoresData);
+  } else {
+    postGame('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', { name: 'Quiz dev' }).then((data) => {
+      [, , , idGame] = data.result.split(' ');
+    });
   }
-  scoreCard.className = 'score_card';
-  name.innerText = `${element.name}:`;
-  score.innerText = element.score;
-  scoreCard.appendChild(name);
-  scoreCard.appendChild(score);
+});
+// update the score list
+refreshBtn.addEventListener('click', () => {
+  getData = getScores(idGame);
+  getData.then((value) => {
+    scoresData = value;
+    if (scoresData.length !== 0) {
+      while (scoresList.lastElementChild) {
+        scoresList.removeChild(scoresList.lastElementChild);
+      }
+      updateCards(scoresData);
+    }
+  });
+});
+// Create a new score
+submitBtn.addEventListener('click', () => {
+  const userScoreInput = +scoreInput.value;
+  if (nameField.value.length > 0 && scoreInput.value.length > 0 && userScoreInput) {
+    const postURL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${idGame}/scores`;
+    submitScore(postURL, { user: nameField.value, score: scoreInput.value });
+    addScore(nameField.value, scoreInput.value);
+  }
 });
