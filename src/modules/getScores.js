@@ -1,10 +1,8 @@
-import { scoresList } from './elements.js';
-
-export default async function getScores() {
+export default async function getScores(id) {
     let scoresData = [];
-    const response = await fetch("https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/I9M1akJB1fujplf54ULE/scores/");
+    const requestURL = "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/" + id + "/scores";
+    const response = await fetch(requestURL);
     const userScoresList = await response.json();
-    console.log(userScoresList);
     scoresData = userScoresList.result;
     return (scoresData);
 }
