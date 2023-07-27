@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #75b5ba;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
@@ -38,34 +38,50 @@ section {
   justify-content: center;
   align-items: flex-start;
   margin-right: 5%;
+  border: #000 solid 3px;
+  border-radius: 10px;
+  max-height: 80vh;
 }
 
 .add_scores {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 20%;
+  justify-content: flex-start;
+  width: 25%;
+  border: #000 solid 3px;
+  border-radius: 10px;
+  background-color: #f7e8d4;
+  padding-top: 0;
 }
 
 .scores_list {
-  border: #000 solid 1px;
   width: 100%;
+  background-color: #f7e7d0;
+  border-radius: 0 0 7px 7px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .score_card {
+  width: 100%;
+  display: flex;
   padding: 2% 0;
 }
 
 .score_card span {
   margin-left: 1%;
+  width: 30%;
 }
 
 .recent_title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin-bottom: 3%;
+  width: 96%;
+  padding: 2% 2% 3% 2%;
+  border-radius: 7px 7px 0 0;
+  background-color: #c7b39c;
+  color: #fff;
 }
 
 form li {
@@ -81,8 +97,27 @@ form li {
   width: 100%;
 }
 
-#card_gray {
-  background-color: #d4d4d4;
+.add_scores h2 {
+  background-color: #c7b39c;
+  width: 96%;
+  padding: 5% 2%;
+  color: #fff;
+}
+
+.card_gray {
+  background-color: #f3f0f0;
+}
+
+#card_yellow {
+  background-color: #fde062;
+}
+
+#card_grayLight {
+  background-color: #d9d9d9;
+}
+
+#card_brown {
+  background-color: #e4bc85;
 }
 
 .add_scores li {
@@ -94,21 +129,29 @@ form li {
 .submit_btn,
 .refresh_btn {
   border-radius: 5px;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #000;
+  color: #fff;
+  background-color: #887256;
+  border: none;
   cursor: pointer;
   box-sizing: border-box;
   padding: 2% 4%;
   font-size: 13px;
+  margin-right: 3%;
+}
+
+.submit_btn:hover,
+.refresh_btn:hover {
+  padding: 3% 6%;
 }
 
 input {
-  border: 2px solid #000;
-  padding: 3% 2%;
-  width: 100%;
+  border: none;
+  padding: 4% 3%;
+  width: 94%;
   box-sizing: border-box;
   font-size: 13px;
+  border-radius: 5px;
+  margin: 1% 3%;
 }
 
 input::-webkit-outer-spin-button,
@@ -119,7 +162,7 @@ input::-webkit-inner-spin-button {
 
 #scorelInput {
   -webkit-appearance: none;
-  margin: 0;
+  margin: 1% 3%;
   -moz-appearance: textfield;
 }
 

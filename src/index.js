@@ -22,6 +22,7 @@ getData.then((value) => {
     while (scoresList.lastElementChild) {
       scoresList.removeChild(scoresList.lastElementChild);
     }
+    scoresData.sort((s1, s2) => s2.score - s1.score);
     updateCards(scoresData);
   } else {
     postGame('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', { name: 'Quiz dev' }).then((data) => {
@@ -38,6 +39,7 @@ refreshBtn.addEventListener('click', () => {
       while (scoresList.lastElementChild) {
         scoresList.removeChild(scoresList.lastElementChild);
       }
+      scoresData.sort((s1, s2) => s2.score - s1.score);
       updateCards(scoresData);
     }
   });
