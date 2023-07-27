@@ -32,12 +32,21 @@ getData.then(value => {
     }
 })
 
+refreshBtn.addEventListener('click', () => {
+  getData = getScores(idGame);
+  getData.then(value => {
+    scoresData = value;
+    if (scoresData.length !== 0) {
+      while (scoresList.lastElementChild) {
+        scoresList.removeChild(scoresList.lastElementChild);
+      }
+      updateCards(scoresData);
+    }
+  })
+});
+
 submitBtn.addEventListener('click', () => {
   if (nameField.value.length > 0 && scoreInput.value.length > 0 && isNaN(scoreInput.value)) {
     updateCards();
   } 
-});
-
-refreshBtn.addEventListener('click', () => {
-  addScore();
 });

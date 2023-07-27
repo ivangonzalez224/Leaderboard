@@ -1,5 +1,4 @@
 import { scoresList } from './elements.js';
-
 import { nameField, scoreInput } from './elements.js';
 //import submitScore from './submit.js';
 
