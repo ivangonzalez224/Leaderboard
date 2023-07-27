@@ -91,7 +91,8 @@ form li {
   width: 100%;
 }
 
-.submit_btn, .refresh_btn {
+.submit_btn,
+.refresh_btn {
   border-radius: 5px;
   color: #000;
   background-color: #fff;

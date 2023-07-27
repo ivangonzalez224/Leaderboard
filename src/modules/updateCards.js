@@ -15,6 +15,6 @@ const updateCards = (scoresData) => {
     scoreCard.appendChild(name);
     scoreCard.appendChild(score);
   });
-}
+};
 
 export default updateCards;
