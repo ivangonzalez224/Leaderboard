@@ -1,4 +1,4 @@
-export default async function postGame(url = '', data = {}) {
+const postGame = async (url = '', data = {}) => {
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -12,4 +12,6 @@ export default async function postGame(url = '', data = {}) {
     body: JSON.stringify(data),
   });
   return response.json();
-}
+};
+
+export default postGame;
